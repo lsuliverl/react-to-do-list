@@ -21,7 +21,7 @@ function App() {
         <div>
             <h1>나의 To Do 리스트 ({toDos.length})</h1>
             <form onSubmit={onSubmit}>
-                <input onChange={onChange} value={toDo} type="text" placeholder="Write your to do..." />
+                <input onChange={onChange} value={toDo} type="text" placeholder="to do를 입력해주세요..." />
                 <button>추가</button>
             </form>
             <hr />
