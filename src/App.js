@@ -12,15 +12,28 @@ function App() {
         setToDos((currentArray) => [toDo, ...currentArray]);
         setToDo("");
     };
+    const deleteBtn = (index) => {
+        setToDos(toDos.filter((item, todoIndex) => index !== todoIndex));
+    };
+    console.log(toDos);
+    console.log(toDos.map((item, index) => <li key={index}>{item}</li>));
     return (
         <div>
-            <h1>나의 할 일들 ({toDos.length})</h1>
+            <h1>My To Dos ({toDos.length})</h1>
             <form onSubmit={onSubmit}>
-                <input onChange={onChange} value={toDo} type="text" placeholder="해야 할일..." />
-                <button>추가</button>
+                <input onChange={onChange} value={toDo} type="text" placeholder="Write your to do..." />
+                <button>Add To Do</button>
             </form>
+            <hr />
+            <ul>
+                {toDos.map((item, index) => (
+                    <li key={index}>
+                        {item}
+                        <button onClick={() => deleteBtn(index)}>❌</button>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
-
 export default App;
