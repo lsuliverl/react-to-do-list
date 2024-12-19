@@ -19,10 +19,10 @@ function App() {
     console.log(toDos.map((item, index) => <li key={index}>{item}</li>));
     return (
         <div>
-            <h1>My To Dos ({toDos.length})</h1>
+            <h1>나의 To Do 리스트 ({toDos.length})</h1>
             <form onSubmit={onSubmit}>
                 <input onChange={onChange} value={toDo} type="text" placeholder="Write your to do..." />
-                <button>Add To Do</button>
+                <button>추가</button>
             </form>
             <hr />
             <ul>
